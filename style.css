@@ -1245,7 +1245,7 @@ text-align: left;
 
 /* order CSS */
 
-#wrapper > div.container > div > div.col-md-8.order-md-1 > form > div > div > label, #wrapper > div.container > div > div.col-md-8.order-md-1 > form > div > label {
+#wrapper > div.container > div > div.col-md-8.order-md-1 > div > div > label, #wrapper > div.container > div > div.col-md-8.order-md-1 > div > label {
     font-weight: bold;
     font-size: 1rem;
 }
