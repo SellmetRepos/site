@@ -4,6 +4,12 @@ let payMethods = document.querySelectorAll('.payment-method')
 
 let cards = document.querySelectorAll('div.card')
 
+let nextButtons = document.querySelectorAll('button.next')
+
+let savedAdd = document.querySelectorAll('.savedAddress')
+
+let prevButtons = document.querySelectorAll('button.prev')
+
 methods.forEach(method =>{
     method.addEventListener('click',()=>{
         methods.forEach(el =>{el.classList.remove("choosen")})
@@ -13,7 +19,7 @@ methods.forEach(method =>{
 
 payMethods.forEach(method =>{
     method.addEventListener('click',()=>{
-        payMethods.forEach(el =>{el.classList.remove("choosen")})
+        payMethods.forEach(el =>{el.classList.remove('choosen')})
         method.classList.toggle('choosen')
     })
 })
@@ -33,19 +39,11 @@ function updateProgressBar () {
     }
 }
 
-let savedAdd = document.querySelectorAll('.savedAddress')
 
-function updateAddress () {    
-    savedAdd.forEach(n => {
-        let storedAdd =  document.querySelector('#address').value
-        let storedCity =  document.querySelector('#miasto').value
-        let storedZip =  document.querySelector('#kod-pocztowy').value
-        n.innerText = storedAdd + ', ' + storedZip + ', ' + storedCity
-    })
-   
-}
 
-let prevButtons = document.querySelectorAll('button.prev')
+
+
+
 
 prevButtons.forEach(btn => {
     btn.addEventListener('click', ()=> {
@@ -65,14 +63,14 @@ prevButtons.forEach(btn => {
     })
 })
 
-let nextButtons = document.querySelectorAll('button.next')
+
 
 nextButtons.forEach(btn => {
     btn.addEventListener('click', ()=> {
         let activeCard 
         for (let i = 0; i < cards.length; i++) {
             if(cards[i].classList.contains('active')){
-                activeCard = i + 2
+                activeCard = i + 1
             }} 
         cards.forEach(card => {
             card.classList.remove('active')
@@ -112,6 +110,16 @@ function updateInfo () {
     orderEmail.innerText = storedEmail
     orderPayment.innerText = storedPayment
     orderDelivery.innerText = storedDelivery
+}
+
+function updateAddress () {    
+    savedAdd.forEach(n => {
+        let storedAdd =  document.querySelector('#address').value
+        let storedCity =  document.querySelector('#miasto').value
+        let storedZip =  document.querySelector('#kod-pocztowy').value
+        n.innerText = storedAdd + ', ' + storedZip + ', ' + storedCity
+    })
+   
 }
 
 updateProgressBar()
