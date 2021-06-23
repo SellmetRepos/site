@@ -72,7 +72,7 @@ nextButtons.forEach(btn => {
         let activeCard 
         for (let i = 0; i < cards.length; i++) {
             if(cards[i].classList.contains('active')){
-                activeCard = i + 1
+                activeCard = i + 2
             }} 
         cards.forEach(card => {
             card.classList.remove('active')
