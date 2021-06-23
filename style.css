@@ -1245,7 +1245,42 @@ text-align: left;
 
 /* order CSS */
 
-#wrapper > div.container > div > div.col-md-8.order-md-1 > div > div > label, #wrapper > div.container > div > div.col-md-8.order-md-1 > div > label {
+.cart-wrapper {
+   position: relative;
+   cursor: pointer;
+   padding: 10px 20px;
+   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.cart-wrapper i {
+    position: absolute;
+    right: 10%;
+    transition: transform 0.5s linear;
+}
+
+.cart-wrapper i.active {
+    transform: rotateZ(180deg);
+}
+
+.order-list {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s linear;
+}
+
+.order-list.active{
+    height: 420px;
+}
+
+.order-container {
+    padding: 20px;
+}
+
+#wrapper > div.container > div > div.col-md-8.order-md-1 >  div > div > label, #wrapper > div.container > div > div.col-md-8.order-md-1 >  div > label {
     font-weight: bold;
     font-size: 1rem;
 }

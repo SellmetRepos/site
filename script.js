@@ -125,3 +125,17 @@ function updateAddress () {
 updateProgressBar()
 
 
+let cartWrapper = document.querySelector('.cart-wrapper')
+
+let cartIcon = document.querySelector('.cart-wrapper i')
+
+let orderList = document.querySelector('.order-list') 
+
+console.log(cartWrapper)
+console.log(cartIcon)
+
+cartWrapper.addEventListener('click', ()=> {
+        cartIcon.classList.toggle('active')
+        orderList.classList.toggle('active')
+    })
+
